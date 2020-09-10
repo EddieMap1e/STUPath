@@ -28,7 +28,7 @@ cc.Class({
             for (let j = 0; j < n; j++)
                 g[i][j] = G[arr[i]][arr[j]];
         window.ansLen = 0;
-        var path = this.work(n)
+        var path = parseInt(this.work(n));
         window.ansPath = new Array();
         this.getAns(n - 1, (1 << n) - 1, path);
         for (let i = 0; i < ansPath.length - 1; i++)

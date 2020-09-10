@@ -26,7 +26,7 @@ cc.Class({
         if (mode == 0) this.redFlagClick(t.getChildByName('red1'));
         else if (mode == 1) this.greenFlagClick(t.getChildByName('green1'));
         else if (mode == 2) this.blueFlagClick(t.getChildByName('blue1'));
-        else if (mode == 3) this.redFlagClick(t.getChildByName('red'));
+        else if (mode == 3) this.redFlagClick(t.getChildByName('red1'));
     },
 
     redFlagClick(event) {
