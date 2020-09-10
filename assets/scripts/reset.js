@@ -25,6 +25,7 @@ cc.Class({
             flags[i].getChildByName('green2').active = false;
             flags[i].getComponent(cc.Button).interactable = true;
             shows[i].getComponent(cc.Button).interactable = true;
+            shows[i].color = cc.color(255, 255, 255);
             flags[i].getChildByName('red1').getComponent(cc.Button).interactable = true;
             flags[i].getChildByName('red2').getComponent(cc.Button).interactable = true;
             flags[i].getChildByName('green1').getComponent(cc.Button).interactable = true;
