@@ -10,6 +10,7 @@ cc.Class({
     },
 
     onClick() {
+        pen.clear();
         ansNode.active = true;
         endButton.interactable = false;
         let ansLabel = ansNode.getChildByName('Label').getComponent(cc.Label);
@@ -31,8 +32,15 @@ cc.Class({
         var path = this.work(n);
         window.ansPath = new Array();
         this.getAns(n - 1, (1 << n) - 1, path);
-        for (let i = 0; i < ansPath.length - 1; i++)
+        pen.moveTo(flags[arr[ansPath[0]]].x, flags[arr[ansPath[0]]].y);
+        for (let i = 0; i < ansPath.length - 1; i++) {
             ansLabel.string += names[arr[ansPath[i]]] + " -> ";
+            pen.lineTo(flags[arr[ansPath[i]]].x, flags[arr[ansPath[i]]].y);
+            pen.stroke();
+            pen.moveTo(flags[arr[ansPath[i]]].x, flags[arr[ansPath[i]]].y);
+        }
+        pen.lineTo(flags[arr[ansPath[ansPath.length - 1]]].x, flags[arr[ansPath[ansPath.length - 1]]].y);
+        pen.stroke();
         ansLabel.string += names[arr[ansPath[ansPath.length - 1]]];
         ansLabel.string += "\n(约为" + ansLen + "米)";
     },

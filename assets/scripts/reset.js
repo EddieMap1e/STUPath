@@ -15,6 +15,7 @@ cc.Class({
         redSelected = null;
         end = null;
         ansNode.active = false;
+        pen.clear();
         for (let i = 0; i < flags.length; i++) {
             selected[i] = false;
             flags[i].getChildByName('red1').active = true;
